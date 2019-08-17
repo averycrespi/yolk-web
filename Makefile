@@ -7,5 +7,5 @@ start:
 
 deploy:
 	cargo web deploy --release
-	rm -r docs/*
+	rm -rf docs/*
 	cp target/deploy/* docs
