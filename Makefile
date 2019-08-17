@@ -8,4 +8,4 @@ start:
 deploy:
 	cargo web deploy --release
 	rm -rf docs/*
-	cp target/deploy/* docs
+	cp -r target/deploy/* docs
