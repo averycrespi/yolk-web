@@ -1,8 +1,21 @@
 body {
+    background-color: #002b36;
     text-align: center;
 }
 
+.yolk-web {
+    padding: 2em;
+}
+
+.box {
+    padding: 2em;
+}
+
 .text {
+	background-color: #a9bdbd;
     resize: none;
     max-width: 95%;
+    padding: 1em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2em;
 }
