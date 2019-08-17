@@ -5,9 +5,10 @@ authors = ["Avery Crespi <averycrespi@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-serde = "1.0"
-serde_derive = "1.0"
-serde_json = "1.0"
 stdweb = "0.4"
 yew = "0.8"
 yolk = "0.3"
+
+[lib]
+name = "yolk_web"
+path = "src/lib.rs"
