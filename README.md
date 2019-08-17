@@ -6,7 +6,7 @@
     <br>
 </h1>
 
-<h4 align="center">Web interface for Yolk.</h4>
+<h4 align="center">A web interface for Yolk.</h4>
 
 <p align="center">
     <a href="#getting-started">Getting Started</a> •
@@ -17,9 +17,9 @@
 
 ## Getting Started
 
-Learn Yolk at <https://averycrespi.github.io/yolk>.
+Learn Yolk at <https://github.com/averycrespi/yolk>.
 
-Try the web interface at <https://averycrespi.github.io/yolk-web>.
+Try Yolk online at <https://averycrespi.github.io/yolk-web>.
 
 ## Development
 
