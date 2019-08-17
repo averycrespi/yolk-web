@@ -59,18 +59,18 @@ impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
         html! {
             <div class="yolk-web">
-                <div>
+                <div class="box">
                     <textarea
                         class=("text",)
-                        cols="80" rows="20"
-                        placeholder="Type Yolk here ..."
+                        cols="1000" rows="10"
+                        placeholder="Type Yolk code here ..."
                         oninput=|e| Msg::Input(e.value)
                     />
                 </div>
-                <div>
+                <div class="box">
                     <textarea
                         class=("text",)
-                        cols="80" rows="20"
+                        cols="1000" rows="10"
                         readonly="readonly"
                         placeholder="YOLOL will appear here"
                         value={self.output.to_string()}
