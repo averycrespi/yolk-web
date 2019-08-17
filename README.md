@@ -30,7 +30,7 @@ Requires Git, Make, Cargo, and Rust nightly.
 cargo install cargo-web
 
 # Clone the repository
-https://github.com/averycrespi/yolk-web && cd yolk-web
+git clone https://github.com/averycrespi/yolk-web.git && cd yolk-web
 
 # Start a local instance at localhost:8000
 make
