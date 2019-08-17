@@ -60,10 +60,21 @@ impl Renderable<Model> for Model {
         html! {
             <div class="yolk-web">
                 <div>
-                    <textarea class=("text",) cols="80" rows="20" oninput=|e| Msg::Input(e.value)/>
+                    <textarea
+                        class=("text",)
+                        cols="80" rows="20"
+                        placeholder="Type Yolk here ..."
+                        oninput=|e| Msg::Input(e.value)
+                    />
                 </div>
                 <div>
-                    <textarea class=("text",) cols="80" rows="20" readonly="readonly" value={self.output.to_string()}/>
+                    <textarea
+                        class=("text",)
+                        cols="80" rows="20"
+                        readonly="readonly"
+                        placeholder="YOLOL will appear here"
+                        value={self.output.to_string()}
+                    />
                 </div>
             </div>
         }
