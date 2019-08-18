@@ -1,44 +1,60 @@
+use yew::format::Json;
+use yew::services::storage::{Area, StorageService};
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 use yolk::ast::YololNode;
 use yolk::{optimize, parse, transpile};
 
+const KEY: &str = "yolk-web";
+
 pub struct Model {
+    storage: StorageService,
+    input: String,
     output: String,
 }
 
-pub enum Msg {
+pub enum Message {
     Input(String),
+}
+
+pub struct Context {
+    pub store: StorageService,
 }
 
 impl Model {
     fn new() -> Self {
-        Model {
+        let mut model = Model {
+            storage: StorageService::new(Area::Local),
+            input: String::new(),
             output: String::new(),
+        };
+        model.load();
+        //TODO: transpile here? may cause panic loop
+        model
+    }
+
+    fn save(&mut self) {
+        self.storage.store(KEY, Json(&self.input));
+    }
+
+    fn load(&mut self) {
+        if let Json(Ok(input)) = self.storage.restore(KEY) {
+            self.input = input;
         }
     }
 
-    fn transpile(&mut self, input: String) {
-        let yolk = match parse(&input) {
-            Ok(yolk) => yolk,
-            Err(err) => {
-                self.output = err.to_string();
-                return;
-            }
+    fn transpile(&mut self) {
+        self.output = match parse(&self.input) {
+            Ok(yolk) => match transpile(&yolk) {
+                Ok((yolol, context)) => YololNode::format_as_program(&optimize(&yolol, &context)),
+                Err(err) => err.to_string(),
+            },
+            Err(err) => err.to_string(),
         };
-        let (yolol, context) = match transpile(&yolk) {
-            Ok((yolol, context)) => (yolol, context),
-            Err(err) => {
-                self.output = err.to_string();
-                return;
-            }
-        };
-        let optimized = optimize(&yolol, &context);
-        self.output = YololNode::format_as_program(&optimized);
     }
 }
 
 impl Component for Model {
-    type Message = Msg;
+    type Message = Message;
     type Properties = ();
 
     fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
@@ -47,8 +63,10 @@ impl Component for Model {
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::Input(s) => {
-                self.transpile(s);
+            Message::Input(s) => {
+                self.input = s;
+                self.save();
+                self.transpile();
                 true
             }
         }
@@ -64,7 +82,8 @@ impl Renderable<Model> for Model {
                         class=("text",)
                         cols="1000" rows="10"
                         placeholder="Type Yolk code here ..."
-                        oninput=|e| Msg::Input(e.value)
+                        oninput=|e| Message::Input(e.value)
+                        value={self.input.to_string()}
                     />
                 </div>
                 <div class="box">
