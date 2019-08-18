@@ -28,7 +28,7 @@ impl Model {
             output: String::new(),
         };
         model.load();
-        //TODO: transpile here? may cause panic loop
+        model.transpile();
         model
     }
 
