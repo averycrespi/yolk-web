@@ -79,7 +79,7 @@ impl Renderable<Model> for Model {
             <div class="yolk-web">
                 <div class="box">
                     <textarea
-                        class=("text",)
+                        class="text"
                         cols="1000" rows="10"
                         placeholder="Type Yolk code here ..."
                         oninput=|e| Message::Input(e.value)
@@ -88,12 +88,15 @@ impl Renderable<Model> for Model {
                 </div>
                 <div class="box">
                     <textarea
-                        class=("text",)
+                        class="text"
                         cols="1000" rows="10"
                         readonly="readonly"
                         placeholder="YOLOL will appear here"
                         value={self.output.to_string()}
                     />
+                </div>
+                <div class="box">
+                    <a class="repo" href="https://github.com/averycrespi/yolk-web">{"GitHub"}</a>
                 </div>
             </div>
         }
