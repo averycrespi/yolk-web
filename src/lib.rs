@@ -16,10 +16,6 @@ pub enum Message {
     Input(String),
 }
 
-pub struct Context {
-    pub store: StorageService,
-}
-
 impl Model {
     fn new() -> Self {
         let mut model = Model {
