@@ -1,13 +1,13 @@
 [package]
 name = "yolk-web"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["Avery Crespi <averycrespi@gmail.com>"]
 edition = "2018"
 
 [dependencies]
 stdweb = "0.4"
 yew = "0.8"
-yolk = "0.3"
+yolk = "0.4"
 
 [lib]
 name = "yolk_web"

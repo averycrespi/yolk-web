@@ -1,8 +1,7 @@
 use yew::format::Json;
 use yew::services::storage::{Area, StorageService};
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
-use yolk::ast::YololNode;
-use yolk::{optimize, parse, transpile};
+use yolk::{format_as_program, optimize, parse, transpile};
 
 const KEY: &str = "yolk-web";
 
@@ -41,7 +40,7 @@ impl Model {
     fn transpile(&mut self) {
         self.output = match parse(&self.input) {
             Ok(yolk) => match transpile(&yolk) {
-                Ok((yolol, context)) => YololNode::format_as_program(&optimize(&yolol, &context)),
+                Ok((yolol, context)) => format_as_program(&optimize(&yolol, &context)),
                 Err(err) => err.to_string(),
             },
             Err(err) => err.to_string(),
