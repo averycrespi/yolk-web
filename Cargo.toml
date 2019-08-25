@@ -3,11 +3,15 @@ name = "yolk-web"
 version = "0.3.0"
 authors = ["Avery Crespi <averycrespi@gmail.com>"]
 edition = "2018"
+build = "build.rs"
 
 [dependencies]
 stdweb = "0.4"
 yew = "0.8"
 yolk = "0.4"
+
+[build-dependencies]
+built = "0.3"
 
 [lib]
 name = "yolk_web"
