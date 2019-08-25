@@ -6,6 +6,10 @@ use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 
 use yolk::{format_as_program, optimize, parse, transpile};
 
+pub mod built_info {
+    include!(concat!(env!("OUT_DIR"), "/built.rs"));
+}
+
 const KEY: &str = "yolk-web";
 
 pub struct Model {
@@ -73,6 +77,10 @@ impl Component for Model {
 
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
+        let (_, yolk_version) = built_info::DEPENDENCIES
+            .iter()
+            .find(|(name, _)| name == &"yolk")
+            .expect("cannot read Yolk version");
         html! {
             <div class="yolk-web">
                 <div class="box">
@@ -94,12 +102,12 @@ impl Renderable<Model> for Model {
                 <div class="box">
                     <p class="note">
                         <a class="note" href="https://github.com/averycrespi/yolk-web">{"Yolk Web"}</a>
-                        {" v0.3.0"}
+                        {format!(" v{}", built_info::PKG_VERSION)}
                     </p>
                     <p class="note">
                         {"Powered by "}
                         <a class="note" href="https://github.com/averycrespi/yolk">{"Yolk"}</a>
-                        {" v0.4.1"}
+                        {format!(" v{}", yolk_version)}
                     </p>
                 </div>
             </div>
