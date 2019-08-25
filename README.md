@@ -20,15 +20,18 @@
 
 ## Getting Started
 
-Learn Yolk at <https://github.com/averycrespi/yolk>.
+Learn Yolk at <https://github.com/averycrespi/yolk>
 
-Try Yolk online at <https://averycrespi.github.io/yolk-web>.
+Try Yolk online at <https://averycrespi.github.io/yolk-web>
 
 ## Development
 
-Requires Git, Make, Cargo, and Rust nightly.
+Requires Git, Make, and Rust nightly.
 
 ```bash
+# Set nightly as default
+rustup default nightly
+
 # Install Cargo Web
 cargo install cargo-web
 
