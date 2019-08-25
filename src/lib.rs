@@ -1,6 +1,9 @@
+#![recursion_limit = "256"]
+
 use yew::format::Json;
 use yew::services::storage::{Area, StorageService};
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
+
 use yolk::{format_as_program, optimize, parse, transpile};
 
 const KEY: &str = "yolk-web";
@@ -74,24 +77,30 @@ impl Renderable<Model> for Model {
             <div class="yolk-web">
                 <div class="box">
                     <textarea
-                        class="text"
+                        class="textbox"
                         cols="1000" rows="10"
                         placeholder="Type Yolk code here ..."
                         oninput=|e| Message::Input(e.value)
-                        value={self.input.to_string()}
-                    />
+                        value={self.input.to_string()} />
                 </div>
                 <div class="box">
                     <textarea
-                        class="text"
+                        class="textbox"
                         cols="1000" rows="10"
                         readonly="readonly"
                         placeholder="YOLOL will appear here"
-                        value={self.output.to_string()}
-                    />
+                        value={self.output.to_string()} />
                 </div>
                 <div class="box">
-                    <a class="repo" href="https://github.com/averycrespi/yolk-web">{"GitHub"}</a>
+                    <p class="note">
+                        <a class="note" href="https://github.com/averycrespi/yolk-web">{"Yolk Web"}</a>
+                        {" v0.3.0"}
+                    </p>
+                    <p class="note">
+                        {"Powered by "}
+                        <a class="note" href="https://github.com/averycrespi/yolk">{"Yolk"}</a>
+                        {" v0.4.1"}
+                    </p>
                 </div>
             </div>
         }

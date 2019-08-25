@@ -11,7 +11,7 @@ body {
     padding: 2em;
 }
 
-.text {
+.textbox {
 	background-color: #a9bdbd;
     resize: none;
     max-width: 95%;
@@ -20,6 +20,6 @@ body {
     font-size: 1em;
 }
 
-.repo{
+.note {
 	color: #a9bdbd;
 }
