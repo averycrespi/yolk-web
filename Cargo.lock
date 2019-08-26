@@ -861,7 +861,7 @@ dependencies = [
 
 [[package]]
 name = "yolk-web"
-version = "0.3.0"
+version = "0.3.1"
 dependencies = [
  "built 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "stdweb 0.4.18 (registry+https://github.com/rust-lang/crates.io-index)",
