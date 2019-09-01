@@ -47,7 +47,7 @@ impl Model {
     fn transpile(&mut self) {
         self.output = match parse(&self.input) {
             Ok(yolk) => match transpile(&yolk) {
-                Ok((yolol, context)) => format_as_program(&optimize(&yolol, &context)),
+                Ok(yolol) => format_as_program(&optimize(yolol)),
                 Err(err) => err.to_string(),
             },
             Err(err) => err.to_string(),
