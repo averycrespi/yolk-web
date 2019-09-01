@@ -1,6 +1,6 @@
 [package]
 name = "yolk-web"
-version = "0.3.1"
+version = "0.4.0"
 authors = ["Avery Crespi <averycrespi@gmail.com>"]
 edition = "2018"
 build = "build.rs"
