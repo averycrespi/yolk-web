@@ -96,7 +96,7 @@ impl Renderable<Model> for Model {
                         class="textbox"
                         cols="1000" rows="10"
                         readonly="readonly"
-                        placeholder="YOLOL will appear here"
+                        placeholder="Yolol will appear here"
                         value={self.output.to_string()} />
                 </div>
                 <div class="box">
