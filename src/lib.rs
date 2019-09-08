@@ -4,7 +4,9 @@ use yew::format::Json;
 use yew::services::storage::{Area, StorageService};
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 
-use yolk::{format_as_program, optimize, parse, transpile};
+use yolk::{YolkError, YolkProgram, YololProgram};
+
+use std::convert::TryInto;
 
 pub mod built_info {
     include!(concat!(env!("OUT_DIR"), "/built.rs"));
@@ -45,11 +47,15 @@ impl Model {
     }
 
     fn transpile(&mut self) {
-        self.output = match parse(&self.input) {
-            Ok(yolk) => match transpile(&yolk) {
-                Ok(yolol) => format_as_program(&optimize(yolol)),
-                Err(err) => err.to_string(),
-            },
+        let parsed: Result<YolkProgram, YolkError> = self.input.parse();
+        self.output = match parsed {
+            Ok(yolk) => {
+                let result: Result<YololProgram, YolkError> = yolk.try_into();
+                match result {
+                    Ok(yolol) => yolol.optimize().to_string(),
+                    Err(err) => err.to_string(),
+                }
+            }
             Err(err) => err.to_string(),
         };
     }

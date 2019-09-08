@@ -1,6 +1,6 @@
 [package]
 name = "yolk-web"
-version = "0.4.2"
+version = "0.5.0"
 authors = ["Avery Crespi <averycrespi@gmail.com>"]
 edition = "2018"
 build = "build.rs"
@@ -8,7 +8,7 @@ build = "build.rs"
 [dependencies]
 stdweb = "0.4"
 yew = "0.8"
-yolk = "0.5"
+yolk = "0.6"
 
 [build-dependencies]
 built = "0.3"
