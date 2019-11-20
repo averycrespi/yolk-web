@@ -3,6 +3,10 @@ body {
     text-align: center;
 }
 
+textarea {
+	font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
 .yolk-web {
     padding: 2em;
 }
