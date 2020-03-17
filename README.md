@@ -22,7 +22,7 @@
 
 Learn Yolk at <https://github.com/averycrespi/yolk>
 
-Try Yolk online at <https://averycrespi.github.io/yolk-web>
+Try Yolk online at <https://yolk.averycrespi.com>
 
 ## Development
 
