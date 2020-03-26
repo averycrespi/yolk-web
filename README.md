@@ -16,8 +16,6 @@
     <a href="#credits">Credits</a>
 </p>
 
-**Warning: Yolk Web is currently in development. Things may change at any time!**
-
 ## Getting Started
 
 Learn Yolk at <https://github.com/averycrespi/yolk>
