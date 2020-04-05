@@ -9,18 +9,11 @@
 <h4 align="center">A web interface for Yolk.</h4>
 
 <p align="center">
-    <a href="#getting-started">Getting Started</a> •
-    <a href="#getting-started">Development</a> •
+    <a href="#development">Development</a> •
     <a href="#license">License</a> •
     <a href="#contribution">Contribution</a> •
     <a href="#credits">Credits</a>
 </p>
-
-## Getting Started
-
-Learn Yolk at <https://github.com/averycrespi/yolk>
-
-Try Yolk online at <https://yolk.averycrespi.com>
 
 ## Development
 
