@@ -15,6 +15,8 @@
     <a href="#credits">Credits</a>
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e49494fe-b369-45d9-a589-f6c6305e0c23/deploy-status)](https://app.netlify.com/sites/yolk-web/deploys)
+
 ## Development
 
 Requires Git, Make, and Rust nightly.
@@ -40,8 +42,8 @@ make deploy
 
 Licensed under either of
 
- * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
- * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+- Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
 at your option.
 
