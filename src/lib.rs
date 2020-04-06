@@ -89,32 +89,35 @@ impl Renderable<Model> for Model {
             .expect("cannot read Yolk version");
         html! {
             <div class="yolk-web">
-                <div class="box">
-                    <textarea
-                        class="textbox"
-                        cols="1000" rows="10"
-                        placeholder="Type Yolk code here ..."
-                        oninput=|e| Message::Input(e.value)
-                        value={self.input.to_string()} />
-                </div>
-                <div class="box">
-                    <textarea
-                        class="textbox"
-                        cols="1000" rows="10"
-                        readonly="readonly"
-                        placeholder="Yolol will appear here"
-                        value={self.output.to_string()} />
-                </div>
-                <div class="box">
-                    <p class="note">
-                        <a class="note" href="https://github.com/averycrespi/yolk-web">{"Yolk Web"}</a>
-                        {format!(" v{}", built_info::PKG_VERSION)}
-                    </p>
-                    <p class="note">
-                        {"Powered by "}
-                        <a class="note" href="https://github.com/averycrespi/yolk">{"Yolk"}</a>
-                        {format!(" v{}", yolk_version)}
-                    </p>
+                <div class="container">
+                    <div class="row justify-content-center m-3">
+                        <h1>{"Yolk Web"}</h1>
+                    </div>
+                    <div class="row justify-content-center m-3">
+                        <textarea
+                            class="textbox"
+                            cols="1000" rows="10"
+                            placeholder="Type Yolk here ..."
+                            oninput=|e| Message::Input(e.value)
+                            value={self.input.to_string()} />
+                    </div>
+                    <div class="row justify-content-center m-3">
+                        <textarea
+                            class="textbox"
+                            cols="1000" rows="10"
+                            readonly="readonly"
+                            placeholder="Yolol will appear here"
+                            value={self.output.to_string()} />
+                    </div>
+                    <div class="row justify-content-center m-3">
+                        <p>
+                            <a class="note" href="https://github.com/averycrespi/yolk-web">{"Yolk Web"}</a>
+                            {format!(" v{}", built_info::PKG_VERSION)}
+                            {" (powered by "}
+                            <a href="https://github.com/averycrespi/yolk">{"Yolk"}</a>
+                            {format!(" v{})", yolk_version)}
+                        </p>
+                    </div>
                 </div>
             </div>
         }

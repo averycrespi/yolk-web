@@ -1,29 +1,5 @@
-body {
-    background-color: #002b36;
-    text-align: center;
-}
-
 textarea {
-	font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.yolk-web {
-    padding: 2em;
-}
-
-.box {
-    padding: 2em;
-}
-
-.textbox {
-	background-color: #a9bdbd;
-    resize: none;
-    max-width: 95%;
-    padding: 1em;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1em;
-}
-
-.note {
-	color: #a9bdbd;
+  font-family: Consolas, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  padding: 1em;
 }

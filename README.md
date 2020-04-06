@@ -53,4 +53,5 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 
 ## Credits
 
-Logo derived from: Egg by David from the [Noun Project](https://thenounproject.com/).
+- Styled with [Bootstrap](https://getbootstrap.com/) and the Darkly theme from [Bootswatch](https://bootswatch.com/)
+- Logo derived from: Egg by David from the [Noun Project](https://thenounproject.com/)
